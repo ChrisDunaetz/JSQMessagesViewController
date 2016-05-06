@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="DINCONREG.otf">
+            <string>DINCond-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JSQMessagesViewController">
             <connections>
@@ -19,8 +24,50 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-2b-4LK" customClass="JSQMessagesCollectionView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="29y-xL-hv4">
+                    <rect key="frame" x="40" y="178" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="29y-xL-hv4" secondAttribute="height" multiplier="1:1" id="cxc-St-X5H"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqX-Jo-LdK">
+                    <rect key="frame" x="8" y="33" width="42" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="3fo-q5-Bvp"/>
+                        <constraint firstAttribute="height" constant="50" id="qai-5i-WDI"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                    <state key="normal" title="Button" image="backButton"/>
+                </button>
+                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w3D-9K-uSP">
+                    <rect key="frame" x="138" y="36" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Grs-dq-oJg"/>
+                        <constraint firstAttribute="width" constant="44" id="zVi-Gh-HH2"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thW-nv-qFl">
+                    <rect key="frame" x="0.0" y="88" width="320" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="ml1-eJ-p91"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINCond-Regular" family="DINCond-Regular" pointSize="18"/>
+                    <color key="textColor" red="0.08235294118" green="0.078431372550000003" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-Yw-DYI">
+                    <rect key="frame" x="266" y="47" width="46" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="5pd-qz-nHu"/>
+                        <constraint firstAttribute="height" constant="22" id="qHQ-Fm-67u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="***">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-2b-4LK" customClass="JSQMessagesCollectionView">
+                    <rect key="frame" x="0.0" y="122" width="320" height="448"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewLayout key="collectionViewLayout" id="dZl-7C-LHR" customClass="JSQMessagesCollectionViewFlowLayout"/>
                     <cells/>
@@ -33,17 +80,31 @@
                     <items/>
                 </toolbar>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="29y-xL-hv4" firstAttribute="top" secondItem="thW-nv-qFl" secondAttribute="bottom" constant="64" id="1eL-I0-3XJ"/>
+                <constraint firstItem="thW-nv-qFl" firstAttribute="top" secondItem="iqX-Jo-LdK" secondAttribute="bottom" constant="5" id="2Vf-zv-lab"/>
                 <constraint firstAttribute="trailing" secondItem="BoD-Az-3DM" secondAttribute="trailing" id="7xc-Ha-asg"/>
+                <constraint firstAttribute="trailing" secondItem="OEb-Yw-DYI" secondAttribute="trailing" constant="8" id="99a-IL-rw3"/>
+                <constraint firstItem="iqX-Jo-LdK" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" constant="8" id="H4z-9w-esq"/>
+                <constraint firstItem="29y-xL-hv4" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" constant="40" id="KN7-7q-gBN"/>
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="MmF-oh-Y75"/>
                 <constraint firstAttribute="trailing" secondItem="l9u-2b-4LK" secondAttribute="trailing" id="O9u-TA-A0e"/>
-                <constraint firstAttribute="bottom" secondItem="l9u-2b-4LK" secondAttribute="bottom" id="Re7-WW-UmS"/>
-                <constraint firstItem="l9u-2b-4LK" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" id="dCQ-DM-Wdj"/>
+                <constraint firstAttribute="bottom" secondItem="l9u-2b-4LK" secondAttribute="bottom" constant="-2" id="Re7-WW-UmS"/>
+                <constraint firstItem="w3D-9K-uSP" firstAttribute="centerX" secondItem="mUa-cS-ru4" secondAttribute="centerX" id="bFg-Cr-SHO"/>
+                <constraint firstAttribute="trailing" secondItem="29y-xL-hv4" secondAttribute="trailing" constant="40" id="bww-F3-DXn"/>
+                <constraint firstItem="l9u-2b-4LK" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="122" id="dCQ-DM-Wdj"/>
+                <constraint firstItem="OEb-Yw-DYI" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="47" id="fL9-tp-kt2"/>
+                <constraint firstItem="iqX-Jo-LdK" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="33" id="mhe-7l-aPO"/>
+                <constraint firstItem="w3D-9K-uSP" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="36" id="qDX-tY-lgm"/>
                 <constraint firstAttribute="bottom" secondItem="BoD-Az-3DM" secondAttribute="bottom" id="rHs-6q-NX4"/>
+                <constraint firstAttribute="trailing" secondItem="thW-nv-qFl" secondAttribute="trailing" id="t5R-Ft-M3B"/>
                 <constraint firstItem="BoD-Az-3DM" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="ts7-8f-0lH"/>
+                <constraint firstItem="thW-nv-qFl" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="vIz-ij-dU2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="backButton" width="22" height="41"/>
+    </resources>
 </document>
